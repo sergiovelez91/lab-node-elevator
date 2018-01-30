@@ -17,18 +17,18 @@ class Elevator {
     }, 1000);
   }
   stop() {
-    let stopSetInterval = setInterval(update, 1000);
-    clearInterval(stopInterval);
+    
+    clearInterval(this.setInterval);
   }
   update() {
    return this.log();
   }
   _passengersEnter() {
     for(let i =0; i<waitingList.lenth;i++)
-        if(this.waitingList[i].originFloor == this.floor) {
-          this.passengers.push(this.waitingList[i]);
-          this.requests.push(this.waitingList[i].destinationFloor);
-          this. waitingList.splite(i,1)
+        if(this.waitingList[i].originFloor == this.floor) {//¿Hay un pavo en la planta del ascensor?
+          this.passengers.push(this.waitingList[i]); //Añado al pavo  a la lista
+          this.requests.push(this.waitingList[i].destinationFloor); //Añado al pavo a la lista de plantas a las que viaja el ascensor
+          this. waitingList.splice(i,1)// Le largo de la lista de espera
       
     }
 
